@@ -1,17 +1,41 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<App> Render <App> 1`] = `
-<p>
-  Hello, 
-  Stranger
-  .
-</p>
+Array [
+  <p>
+    Hello, 
+    Stranger
+    .
+  </p>,
+  <button
+    className="welcome__button"
+    onClick={[Function]}
+  >
+    <span
+      className="visually-hidden"
+    >
+      Начать игру
+    </span>
+  </button>,
+]
 `;
 
 exports[`<App> Render <App> with name 1`] = `
-<p>
-  Hello, 
-  Boss
-  .
-</p>
+Array [
+  <p>
+    Hello, 
+    Boss
+    .
+  </p>,
+  <button
+    className="welcome__button"
+    onClick={[Function]}
+  >
+    <span
+      className="visually-hidden"
+    >
+      Начать игру
+    </span>
+  </button>,
+]
 `;

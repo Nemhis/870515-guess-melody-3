@@ -1,13 +1,13 @@
 import React from 'react';
-import PropTypes from "prop-types";
+import PropTypes from 'prop-types';
 
-import WelcomeScreen from '../welcome-screen/welcome-screen';
+import WelcomeScreen from '../welcome-screen/welcome-screen.jsx';
 
 const App = (props) => {
   const {name} = props;
 
   return <React.Fragment>
-    <WelcomeScreen name={name} />
+    <WelcomeScreen name={name} onWelcomeButtonClick={() => {}}/>
   </React.Fragment>;
 };
 

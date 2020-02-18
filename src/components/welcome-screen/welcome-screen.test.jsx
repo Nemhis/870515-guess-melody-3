@@ -1,23 +1,24 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 
-import App from './welcome-screen.jsx';
+import WelcomeScreen from './welcome-screen.jsx';
 
 const name = `Boss`;
 
-describe(`<Welcome-screen>`, () => {
-  it(`Render <Welcome-screen>`, () => {
+describe(`<WelcomeScreen>`, () => {
+  it(`Render <WelcomeScreen>`, () => {
     const tree = renderer
-      .create(<App/>)
+      .create(<WelcomeScreen onWelcomeButtonClick={() => {}} />)
       .toJSON(`test`);
 
     expect(tree).toMatchSnapshot();
   });
 
-  it(`Render <Welcome-screen> with name`, () => {
+  it(`Render <WelcomeScreen> with name`, () => {
     const tree = renderer
-      .create(<App
+      .create(<WelcomeScreen
         name={name}
+        onWelcomeButtonClick={() => {}}
       />)
       .toJSON(name);
 
