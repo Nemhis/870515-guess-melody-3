@@ -12,7 +12,7 @@ const App = (props) => {
 };
 
 App.propTypes = {
-  name: PropTypes.number.isRequired,
+  name: PropTypes.string,
 };
 
 export default App;

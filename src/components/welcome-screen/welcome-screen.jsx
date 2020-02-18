@@ -10,7 +10,7 @@ const WelcomeScreen = (props) => {
 };
 
 WelcomeScreen.propTypes = {
-  name: PropTypes.number.isRequired,
+  name: PropTypes.string,
 };
 
 export default WelcomeScreen;

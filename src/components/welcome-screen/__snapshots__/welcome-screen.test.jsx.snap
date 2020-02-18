@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Welcome-screen> Render <Welcome-screen> 1`] = `
+<p>
+  Hello, 
+  Stranger
+  .
+</p>
+`;
+
+exports[`<Welcome-screen> Render <Welcome-screen> with name 1`] = `
+<p>
+  Hello, 
+  Boss
+  .
+</p>
+`;
