@@ -6,9 +6,7 @@ import WelcomeScreen from '../welcome-screen/welcome-screen.jsx';
 const App = (props) => {
   const {name} = props;
 
-  return <React.Fragment>
-    <WelcomeScreen name={name} onWelcomeButtonClick={() => {}}/>
-  </React.Fragment>;
+  return <WelcomeScreen name={name} onWelcomeButtonClick={() => {}}/>;
 };
 
 App.propTypes = {
