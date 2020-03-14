@@ -1,41 +1,14 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<WelcomeScreen> Render <WelcomeScreen> 1`] = `
-Array [
-  <p>
-    Hello, 
-    Stranger
-    .
-  </p>,
-  <button
-    className="welcome__button"
-    onClick={[Function]}
+<button
+  className="welcome__button"
+  onClick={[Function]}
+>
+  <span
+    className="visually-hidden"
   >
-    <span
-      className="visually-hidden"
-    >
-      Начать игру
-    </span>
-  </button>,
-]
-`;
-
-exports[`<WelcomeScreen> Render <WelcomeScreen> with name 1`] = `
-Array [
-  <p>
-    Hello, 
-    Boss
-    .
-  </p>,
-  <button
-    className="welcome__button"
-    onClick={[Function]}
-  >
-    <span
-      className="visually-hidden"
-    >
-      Начать игру
-    </span>
-  </button>,
-]
+    Начать игру
+  </span>
+</button>
 `;

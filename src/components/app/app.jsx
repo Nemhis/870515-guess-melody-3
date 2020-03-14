@@ -80,7 +80,6 @@ class App extends PureComponent {
 }
 
 App.propTypes = {
-  name: PropTypes.string,
   questions: PropTypes.arrayOf(PropTypes.shape({
     type: PropTypes.string.isRequired,
     answers: PropTypes.array.isRequired,

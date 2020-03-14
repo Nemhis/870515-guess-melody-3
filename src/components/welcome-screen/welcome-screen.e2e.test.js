@@ -13,7 +13,6 @@ it(`Should welcome button be pressed`, () => {
 
   const welcomeScreen = shallow(
       <WelcomeScreen
-        name={`Boss`}
         onWelcomeButtonClick={onWelcomeButtonClick}
       />
   );
