@@ -38,12 +38,17 @@ class App extends PureComponent {
     return this._getScreenByQuestion(question);
   }
 
-  _getScreenByQuestion({type}) {
+  _getScreenByQuestion(question) {
     let screen = null;
+    const toNextStep = () => {
+      this.setState((prevState) => ({
+        step: prevState.step + 1,
+      }));
+    };
 
-    switch (type) {
+    switch (question.type) {
       case GameType.GENRE:
-        screen = (<ArtistQuestionScreen />);
+        screen = (<GenreQuestionScreen question={question} onAnswer={toNextStep}/>);
         break;
       case GameType.ARTIST:
         screen = (<ArtistQuestionScreen />);
@@ -54,6 +59,8 @@ class App extends PureComponent {
   }
 
   render() {
+    const {questions} = this.props;
+
     return (
       <BrowserRouter>
         <Switch>
@@ -64,7 +71,7 @@ class App extends PureComponent {
             <ArtistQuestionScreen />
           </Route>
           <Route exact path="/dev-genre">
-            <GenreQuestionScreen />
+            <GenreQuestionScreen question={questions[0]} onAnswer={() => {}}/>
           </Route>
         </Switch>
       </BrowserRouter>
