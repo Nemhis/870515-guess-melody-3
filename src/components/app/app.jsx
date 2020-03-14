@@ -51,7 +51,7 @@ class App extends PureComponent {
         screen = (<GenreQuestionScreen question={question} onAnswer={toNextStep}/>);
         break;
       case GameType.ARTIST:
-        screen = (<ArtistQuestionScreen />);
+        screen = (<ArtistQuestionScreen question={question} onAnswer={toNextStep}/>);
         break;
     }
 
@@ -67,11 +67,11 @@ class App extends PureComponent {
           <Route exact path="/">
             {this._renderGameScreen()}
           </Route>
-          <Route exact path="/dev-artist">
-            <ArtistQuestionScreen />
-          </Route>
           <Route exact path="/dev-genre">
             <GenreQuestionScreen question={questions[0]} onAnswer={() => {}}/>
+          </Route>
+          <Route exact path="/dev-artist">
+            <ArtistQuestionScreen question={questions[1]} onAnswer={() => {}}/>
           </Route>
         </Switch>
       </BrowserRouter>
