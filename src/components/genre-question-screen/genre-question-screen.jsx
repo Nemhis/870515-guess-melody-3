@@ -8,16 +8,21 @@ class GenreQuestionScreen extends PureComponent {
     super(props);
 
     this.state = {
-      answers: [false, false, false, false]
+      answers: [false, false, false, false],
+      activePlayerIndex: -1,
     };
   }
 
   _renderAnswer({src}, index) {
-    const {answers} = this.state;
+    const {answers, activePlayerIndex} = this.state;
 
     return (
       <div key={`${index}-${src}`} className="track">
-        <AudioPlayer src={src} isPlaying={index === 0} />
+        <AudioPlayer src={src} isPlaying={index === activePlayerIndex} onPlayButtonClick={() => {
+          this.setState({
+            activePlayerIndex: index === activePlayerIndex ? -1 : index
+          });
+        }}/>
 
         <div className="game__answer">
           <input className="game__input visually-hidden" type="checkbox" name="answer"
