@@ -7,7 +7,11 @@ import ArtistQuestionScreen from '../artist-question-screen/artist-question-scre
 import GenreQuestionScreen from '../genre-question-screen/genre-question-screen.jsx';
 import GameScreen from '../game-screen/game-screen.jsx';
 
+import withActivePlayer from '../../hocs/with-audio-player';
 import {GameType} from '../../const';
+
+const ArtistQuestionScreenWrapped = withActivePlayer(ArtistQuestionScreen);
+const GenreQuestionScreenWrapped = withActivePlayer(GenreQuestionScreen);
 
 class App extends PureComponent {
   constructor(props) {
@@ -50,12 +54,12 @@ class App extends PureComponent {
     switch (question.type) {
       case GameType.GENRE:
         screen = <GameScreen type={question.type}>
-          <GenreQuestionScreen question={question} onAnswer={toNextStep}/>
+          <GenreQuestionScreenWrapped question={question} onAnswer={toNextStep}/>
         </GameScreen>;
         break;
       case GameType.ARTIST:
         screen = <GameScreen type={question.type}>
-          <ArtistQuestionScreen question={question} onAnswer={toNextStep}/>
+          <ArtistQuestionScreenWrapped question={question} onAnswer={toNextStep}/>
         </GameScreen>;
         break;
     }
@@ -74,12 +78,12 @@ class App extends PureComponent {
           </Route>
           <Route exact path="/dev-genre">
             <GameScreen type={questions[0].type}>
-              <GenreQuestionScreen question={questions[0]} onAnswer={() => {}}/>
+              <GenreQuestionScreenWrapped question={questions[0]} onAnswer={() => {}}/>
             </GameScreen>
           </Route>
           <Route exact path="/dev-artist">
             <GameScreen type={questions[1].type}>
-              <ArtistQuestionScreen question={questions[1]} onAnswer={() => {}}/>
+              <ArtistQuestionScreenWrapped question={questions[1]} onAnswer={() => {}}/>
             </GameScreen>
           </Route>
         </Switch>

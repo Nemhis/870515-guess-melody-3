@@ -1,28 +1,22 @@
 import React, {PureComponent} from 'react';
 import PropTypes from 'prop-types';
 
-import AudioPlayer from '../audio-player/audio-player.jsx';
-
 class GenreQuestionScreen extends PureComponent {
   constructor(props) {
     super(props);
 
     this.state = {
       answers: [false, false, false, false],
-      activePlayerIndex: -1,
     };
   }
 
   _renderAnswer({src}, index) {
-    const {answers, activePlayerIndex} = this.state;
+    const {renderPlayer} = this.props;
+    const {answers} = this.state;
 
     return (
       <div key={`${index}-${src}`} className="track">
-        <AudioPlayer src={src} isPlaying={index === activePlayerIndex} onPlayButtonClick={() => {
-          this.setState({
-            activePlayerIndex: index === activePlayerIndex ? -1 : index
-          });
-        }}/>
+        {renderPlayer(src, index)}
 
         <div className="game__answer">
           <input className="game__input visually-hidden" type="checkbox" name="answer"
@@ -71,6 +65,7 @@ GenreQuestionScreen.propTypes = {
     })),
   }).isRequired,
   onAnswer: PropTypes.func.isRequired,
+  renderPlayer: PropTypes.func.isRequired,
 };
 
 export default GenreQuestionScreen;
