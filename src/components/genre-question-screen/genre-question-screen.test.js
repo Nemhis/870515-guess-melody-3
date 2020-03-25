@@ -24,7 +24,7 @@ const question = {
 
 it(`Render correctly <GenreQuestionScreen>`, () => {
   const tree = renderer
-    .create(<GenreQuestionScreen question={question} onAnswer={() => {}} />, {
+    .create(<GenreQuestionScreen question={question} onAnswer={() => {}} renderPlayer={() => {}} />, {
       createNodeMock: () => ({}),
     })
     .toJSON();
