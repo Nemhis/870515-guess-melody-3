@@ -97,6 +97,7 @@ App.propTypes = {
     type: PropTypes.string.isRequired,
     answers: PropTypes.array.isRequired,
   })),
+  errorsCount: PropTypes.number.isRequired,
 };
 
 export default App;
