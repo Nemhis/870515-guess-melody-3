@@ -2,8 +2,6 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 
 import ArtistQuestionScreen from './artist-question-screen.jsx';
-import AudioPlayer from '../audio-player/audio-player';
-import GenreQuestionScreen from '../genre-question-screen/genre-question-screen';
 
 const question = {
   type: `artist`,
