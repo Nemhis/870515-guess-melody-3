@@ -1,9 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const WelcomeScreen = (props) => {
-  const {onWelcomeButtonClick} = props;
-
+const WelcomeScreen = ({onWelcomeButtonClick, errorsCount}) => {
   return (
     <section className="welcome">
       <div className="welcome__logo">
@@ -17,7 +15,7 @@ const WelcomeScreen = (props) => {
       <p className="welcome__text">Правила просты:</p>
       <ul className="welcome__rules-list">
         <li>Нужно ответить на все вопросы.</li>
-        <li>Можно допустить 3 ошибки.</li>
+        <li>Можно допустить {errorsCount} ошибки.</li>
       </ul>
       <p className="welcome__text">Удачи!</p>
     </section>
@@ -26,6 +24,7 @@ const WelcomeScreen = (props) => {
 
 WelcomeScreen.propTypes = {
   onWelcomeButtonClick: PropTypes.func.isRequired,
+  errorsCount: PropTypes.number.isRequired
 };
 
 export default WelcomeScreen;

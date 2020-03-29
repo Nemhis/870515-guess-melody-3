@@ -49,7 +49,7 @@ class GenreQuestionScreen extends PureComponent {
         }}>
           {answers.map((answer, index) => this._renderAnswer(answer, index))}
 
-          <button className="game__submit button" type="submit" onClick={onAnswer}>Ответить</button>
+          <button className="game__submit button" type="submit">Ответить</button>
         </form>
       </section>
     );
