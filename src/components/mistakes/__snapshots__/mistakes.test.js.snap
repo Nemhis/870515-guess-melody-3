@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`render correctly <Mistakes> With one one count 1`] = `
+<div
+  className="game__mistakes"
+>
+  <div
+    className="wrong"
+  />
+</div>
+`;
+
+exports[`render correctly <Mistakes> With one zero count 1`] = `
+<div
+  className="game__mistakes"
+/>
+`;
