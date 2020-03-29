@@ -20,13 +20,13 @@ class App extends PureComponent {
     const {
       questions,
       step,
-      errorsCount,
+      maxMistakes,
       onWelcomeButtonClick,
     } = this.props;
 
     if (step === -1 || step >= questions.length) {
       return (
-        <WelcomeScreen onWelcomeButtonClick={onWelcomeButtonClick} errorsCount={errorsCount} />
+        <WelcomeScreen onWelcomeButtonClick={onWelcomeButtonClick} errorsCount={maxMistakes} />
       );
     }
 
@@ -90,7 +90,7 @@ App.propTypes = {
     type: PropTypes.string.isRequired,
     answers: PropTypes.array.isRequired,
   })),
-  errorsCount: PropTypes.number.isRequired,
+  maxMistakes: PropTypes.number.isRequired,
   step: PropTypes.number.isRequired,
   onWelcomeButtonClick: PropTypes.func.isRequired,
   onUserAnswer: PropTypes.func.isRequired
@@ -98,6 +98,8 @@ App.propTypes = {
 
 const mapStateToProps = (state) => ({
   step: state.step,
+  questions: state.questions,
+  maxMistakes: state.maxMistakes,
 });
 
 const mapDispatchToProps = (dispatch) => ({
@@ -105,8 +107,8 @@ const mapDispatchToProps = (dispatch) => ({
     dispatch(ActionCreator.incrementStep());
   },
   onUserAnswer(question, answer) {
-    dispatch(ActionCreator.incrementStep());
     dispatch(ActionCreator.incrementMistake(question, answer));
+    dispatch(ActionCreator.incrementStep());
   },
 });
 
