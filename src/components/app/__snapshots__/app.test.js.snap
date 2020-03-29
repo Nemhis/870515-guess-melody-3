@@ -366,7 +366,6 @@ exports[`Render correctly <App> Render genre screen 1`] = `
       </div>
       <button
         className="game__submit button"
-        onClick={[Function]}
         type="submit"
       >
         Ответить
@@ -417,7 +416,9 @@ exports[`Render correctly <App> Render welcome screen 1`] = `
       Нужно ответить на все вопросы.
     </li>
     <li>
-      Можно допустить 3 ошибки.
+      Можно допустить 
+      3
+       ошибки.
     </li>
   </ul>
   <p

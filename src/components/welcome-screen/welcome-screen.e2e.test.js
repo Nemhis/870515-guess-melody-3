@@ -14,6 +14,7 @@ it(`Should welcome button be pressed`, () => {
   const welcomeScreen = shallow(
       <WelcomeScreen
         onWelcomeButtonClick={onWelcomeButtonClick}
+        errorsCount={3}
       />
   );
 
