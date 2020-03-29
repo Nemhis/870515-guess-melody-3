@@ -1,4 +1,5 @@
-import {reducer, ActionType} from './reducer.js';
+import {reducer} from './reducer.js';
+import {ActionType} from './actions';
 
 describe(`Reducer tests`, () => {
   it(`Reducer without additional parameters should return initial state`, () => {

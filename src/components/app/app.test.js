@@ -1,7 +1,7 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 
-import App from './app.jsx';
+import {App} from './app.jsx';
 
 const questions = [
   {
@@ -39,11 +39,57 @@ const questions = [
   },
 ];
 
-describe(`<App>`, () => {
-  it(`Render <App>`, () => {
+describe(`Render correctly <App>`, () => {
+  it(`Render welcome screen`, () => {
     const tree = renderer
-      .create(<App questions={questions}/>)
-      .toJSON(`test`);
+      .create(<App
+        questions={questions}
+        errorsCount={3}
+        step={-1}
+        onWelcomeButtonClick={() => {}}
+        onUserAnswer={() => {}}
+      />, {
+        createNodeMock: () => {
+          return {};
+        }
+      })
+      .toJSON();
+
+    expect(tree).toMatchSnapshot();
+  });
+
+  it(`Render genre screen`, () => {
+    const tree = renderer
+      .create(<App
+        questions={questions}
+        errorsCount={3}
+        step={0}
+        onWelcomeButtonClick={() => {}}
+        onUserAnswer={() => {}}
+      />, {
+        createNodeMock: () => {
+          return {};
+        }
+      })
+      .toJSON();
+
+    expect(tree).toMatchSnapshot();
+  });
+
+  it(`Render artist screen`, () => {
+    const tree = renderer
+      .create(<App
+        questions={questions}
+        errorsCount={3}
+        step={1}
+        onWelcomeButtonClick={() => {}}
+        onUserAnswer={() => {}}
+      />, {
+        createNodeMock: () => {
+          return {};
+        }
+      })
+      .toJSON();
 
     expect(tree).toMatchSnapshot();
   });

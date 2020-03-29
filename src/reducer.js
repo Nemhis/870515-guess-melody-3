@@ -1,13 +1,9 @@
 import {extend} from './utils.js';
+import {ActionType} from './actions';
 
 const initialState = {
   mistakes: 0,
   step: -1,
-};
-
-const ActionType = {
-  INCREMENT_MISTAKES: `INCREMENT_MISTAKES`,
-  INCREMENT_STEP: `INCREMENT_STEP`,
 };
 
 const reducer = (state = initialState, action) => {
@@ -27,4 +23,4 @@ const reducer = (state = initialState, action) => {
 };
 
 
-export {reducer, ActionType};
+export {reducer};
